@@ -1,0 +1,113 @@
+object Form1: TForm1
+  Left = 772
+  Height = 480
+  Top = 140
+  Width = 640
+  Caption = 'NosoNet'
+  ClientHeight = 460
+  ClientWidth = 640
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 640
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  LCLVersion = '2.0.10.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 460
+    Top = 0
+    Width = 640
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet2: TTabSheet
+      Caption = 'Nodes'
+      ClientHeight = 432
+      ClientWidth = 632
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 432
+        Top = 0
+        Width = 632
+        Align = alClient
+        ColCount = 8
+        FixedCols = 0
+        RowCount = 1
+        ScrollBars = ssVertical
+        TabOrder = 0
+        OnResize = StringGrid1Resize
+        Cells = (
+          8
+          0
+          0
+          'Host'
+          1
+          0
+          'Port'
+          2
+          0
+          'Peers'
+          3
+          0
+          'Block'
+          4
+          0
+          'LBHash'
+          5
+          0
+          'Pending'
+          6
+          0
+          'Branch'
+          7
+          0
+          'Delta'
+        )
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'Console'
+      ClientHeight = 432
+      ClientWidth = 632
+      object Edit1: TEdit
+        Left = 0
+        Height = 23
+        Top = 409
+        Width = 632
+        Align = alBottom
+        Color = clBlack
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Memo1: TMemo
+        Left = 0
+        Height = 409
+        Top = 0
+        Width = 632
+        Align = alClient
+        Color = clBlack
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 560
+    Top = 408
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+    end
+  end
+end

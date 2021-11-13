@@ -1,0 +1,19 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tform1.caption
+msgid "NosoNet"
+msgstr ""
+
+#: tform1.menuitem1.caption
+msgid "File"
+msgstr ""
+
+#: tform1.tabsheet1.caption
+msgid "Console"
+msgstr ""
+
+#: tform1.tabsheet2.caption
+msgid "Nodes"
+msgstr ""
+
