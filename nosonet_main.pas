@@ -134,7 +134,7 @@ var
 Begin
 command := Parameter(LineText,0);
 if uppercase(command) = 'EXIT' then closeapp
-else if uppercase(command) = 'VER' then G_consolelines.Add(Restring2+AppVersion)
+else if uppercase(command) = 'VER' then G_consolelines.Add(Format(Restring2,[AppVersion]))
 else G_consolelines.Add(Format(Restring3,[command]));
 End;
 
@@ -142,9 +142,10 @@ End;
 
 function CloseApp():Boolean;
 Begin
+Result := true;
 
 form1.Close;
-Result := true;
+
 End;
 
 // Adjust the size of the Sgrid for nodes

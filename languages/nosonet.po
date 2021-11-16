@@ -6,7 +6,7 @@ msgid "Starting"
 msgstr ""
 
 #: nosonet_language.restring2
-msgid "NosoNet version "
+msgid "NosoNet version %s"
 msgstr ""
 
 #: nosonet_language.restring3
