@@ -6,11 +6,16 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DefaultTranslator,
-  ComCtrls, StdCtrls, Menus, Grids;
+  ComCtrls, StdCtrls, Menus, Grids, LCLTranslator, NosoNet_Language, NosoNet_Functions ;
 
 type
 
   { TForm1 }
+
+   NodeData = Packed Record
+     ip: string[15];
+     Port : int64;
+     end;
 
   TForm1 = class(TForm)
     Edit1: TEdit;
@@ -30,6 +35,9 @@ type
 
   end;
 
+function StartApp():boolean;
+function CloseApp():Boolean;
+
 CONST
   DefaultNodes : String = 'DefNodes '+
                             '45.146.252.103:8080 '+
@@ -42,6 +50,8 @@ CONST
 var
   Form1: TForm1;
 
+  NodeList : Array of NodeData; // Stores the info of the mainnet nodes
+
 implementation
 
 {$R *.lfm}
@@ -52,7 +62,27 @@ procedure TForm1.FormActivate(Sender: TObject);
 begin
 Form1.OnActivate:= nil;
 // Code to be run at launch
+memo1.Lines.Add(Restring1);
+if not StartApp then CloseApp;
 end;
+
+/////////////////////// START APP RELATIVES /////////////////////////////////
+
+function StartApp():boolean;
+Begin
+Result := false;
+LoadDefNodes;
+
+Result := true;
+End;
+
+/////////////////////// CLOSE APP RELATIVES /////////////////////////////////
+
+function CloseApp():Boolean;
+Begin
+
+Result := true;
+End;
 
 // Adjust the size of the Sgrid for nodes
 procedure TForm1.StringGrid1Resize(Sender: TObject);

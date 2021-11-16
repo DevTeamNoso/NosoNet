@@ -1,6 +1,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8"
 
+#: nosonet_language.restring1
+msgid "Starting"
+msgstr ""
+
 #: tform1.caption
 msgid "NosoNet"
 msgstr ""

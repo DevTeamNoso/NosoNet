@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, nosonet_main
+  Forms, nosonet_main, NosoNet_Language, NosoNet_Functions
   { you can add units after this };
 
 {$R *.res}

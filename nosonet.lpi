@@ -35,7 +35,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="4">
       <Unit0>
         <Filename Value="nosonet.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -47,6 +47,16 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="nosonet_language.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NosoNet_Language"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="nosonet_functions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NosoNet_Functions"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
