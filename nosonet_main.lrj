@@ -1,6 +1,14 @@
 {"version":1,"strings":[
 {"hash":90850452,"name":"tform1.caption","sourcebytes":[78,111,115,111,78,101,116],"value":"NosoNet"},
 {"hash":5593795,"name":"tform1.tabsheet2.caption","sourcebytes":[78,111,100,101,115],"value":"Nodes"},
+{"hash":325284,"name":"tform1.stringgrid1.columns[0].title.caption","sourcebytes":[72,111,115,116],"value":"Host"},
+{"hash":358036,"name":"tform1.stringgrid1.columns[1].title.caption","sourcebytes":[80,111,114,116],"value":"Port"},
+{"hash":5684371,"name":"tform1.stringgrid1.columns[2].title.caption","sourcebytes":[80,101,101,114,115],"value":"Peers"},
+{"hash":4797851,"name":"tform1.stringgrid1.columns[3].title.caption","sourcebytes":[66,108,111,99,107],"value":"Block"},
+{"hash":84469912,"name":"tform1.stringgrid1.columns[4].title.caption","sourcebytes":[76,66,104,97,115,104],"value":"LBhash"},
+{"hash":113553431,"name":"tform1.stringgrid1.columns[5].title.caption","sourcebytes":[80,101,110,100,105,110,103],"value":"Pending"},
+{"hash":77104280,"name":"tform1.stringgrid1.columns[6].title.caption","sourcebytes":[66,114,97,110,99,104],"value":"Branch"},
+{"hash":4899745,"name":"tform1.stringgrid1.columns[7].title.caption","sourcebytes":[68,101,108,116,97],"value":"Delta"},
 {"hash":174433893,"name":"tform1.tabsheet1.caption","sourcebytes":[67,111,110,115,111,108,101],"value":"Console"},
 {"hash":315429,"name":"tform1.menuitem1.caption","sourcebytes":[70,105,108,101],"value":"File"}
 ]}

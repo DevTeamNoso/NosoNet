@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DefaultTranslator,
-  ComCtrls, StdCtrls, Menus, Grids, LCLTranslator, NosoNet_Language, NosoNet_Functions ;
+  ComCtrls, StdCtrls, Menus, Grids, LCLTranslator, ExtCtrls, NosoNet_Language,
+  NosoNet_Functions, LCLType  ;
 
 type
 
@@ -18,16 +19,19 @@ type
      end;
 
   TForm1 = class(TForm)
-    Edit1: TEdit;
+    ConsoleEdit: TEdit;
     MainMenu1: TMainMenu;
-    Memo1: TMemo;
+    Console: TMemo;
     MenuItem1: TMenuItem;
     PageControl1: TPageControl;
     StringGrid1: TStringGrid;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    TimerLatido: TTimer;
+    procedure ConsoleEditKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormActivate(Sender: TObject);
     procedure StringGrid1Resize(Sender: TObject);
+    procedure TimerLatidoTimer(Sender: TObject);
 
   private
 
@@ -37,6 +41,8 @@ type
 
 function StartApp():boolean;
 function CloseApp():Boolean;
+function Latido(): Boolean;
+Procedure processLine(linetext:string);
 
 CONST
   DefaultNodes : String = 'DefNodes '+
@@ -46,11 +52,15 @@ CONST
                             '107.172.5.8:8080 '+
                             '185.239.239.184:8080 '+
                             '109.230.238.240:8080';
+  AppVersion : string = '1.0';
 
 var
   Form1: TForm1;
 
   NodeList : Array of NodeData; // Stores the info of the mainnet nodes
+  G_ConsoleLines : TStringList;   // Text to be show on console
+  G_ProcessLines : TStringList;  // ]Lines to be preocessed ordered
+  G_LastConsoleCommand: String;
 
 implementation
 
@@ -61,19 +71,71 @@ implementation
 procedure TForm1.FormActivate(Sender: TObject);
 begin
 Form1.OnActivate:= nil;
+TimerLatido.Enabled:=false;
 // Code to be run at launch
-memo1.Lines.Add(Restring1);
+Console.Lines.Add(Restring1);
 if not StartApp then CloseApp;
 end;
+
 
 /////////////////////// START APP RELATIVES /////////////////////////////////
 
 function StartApp():boolean;
 Begin
 Result := false;
+G_ConsoleLines := TStringlist.Create;
+G_ProcessLines := TStringlist.Create;
 LoadDefNodes;
 
 Result := true;
+Form1.TimerLatido.Enabled:=True;
+End;
+
+/////////////////////// EXECUTION RELATIVES /////////////////////////////////
+
+procedure TForm1.TimerLatidoTimer(Sender: TObject);
+begin
+TimerLatido.Enabled:=false;
+Latido;
+TimerLatido.Enabled:=True;
+end;
+
+function Latido(): Boolean;
+Begin
+if G_ProcessLines.Count>0 then
+   begin
+   processLine(G_ProcessLines[0]);
+   G_ProcessLines.Delete(0);
+   end;
+if G_ConsoleLines.Count>0 then
+   begin
+   Form1.Console.Lines.Add(G_ConsoleLines[0]);
+   G_ConsoleLines.Delete(0);
+   end;
+Result := true;
+End;
+
+procedure TForm1.ConsoleEditKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+var
+  LineText : String;
+begin
+LineText := ConsoleEdit.Text;
+if Key=VK_RETURN then
+   begin
+   G_LastConsoleCommand := LineText;
+   ConsoleEdit.Text := '';
+   if LineText <> '' then G_ProcessLines.Add(LineText);
+   end;
+end;
+
+Procedure processLine(linetext:string);
+var
+  command : string = '';
+Begin
+command := Parameter(LineText,0);
+if uppercase(command) = 'EXIT' then closeapp
+else if uppercase(command) = 'VER' then G_consolelines.Add(Restring2+AppVersion)
+else G_consolelines.Add(Format(Restring3,[command]));
 End;
 
 /////////////////////// CLOSE APP RELATIVES /////////////////////////////////
@@ -81,6 +143,7 @@ End;
 function CloseApp():Boolean;
 Begin
 
+form1.Close;
 Result := true;
 End;
 

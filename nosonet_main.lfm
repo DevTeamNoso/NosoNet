@@ -16,9 +16,9 @@ object Form1: TForm1
     Height = 460
     Top = 0
     Width = 640
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 0
     object TabSheet2: TTabSheet
       Caption = 'Nodes'
@@ -31,13 +31,46 @@ object Form1: TForm1
         Width = 632
         Align = alClient
         ColCount = 8
+        Columns = <        
+          item
+            Title.Caption = 'Host'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Port'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Peers'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Block'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'LBhash'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Pending'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Branch'
+            Width = 64
+          end        
+          item
+            Title.Caption = 'Delta'
+            Width = 64
+          end>
         FixedCols = 0
         RowCount = 1
         ScrollBars = ssVertical
         TabOrder = 0
         OnResize = StringGrid1Resize
         Cells = (
-          8
+          5
           0
           0
           'Host'
@@ -53,15 +86,6 @@ object Form1: TForm1
           4
           0
           'LBHash'
-          5
-          0
-          'Pending'
-          6
-          0
-          'Branch'
-          7
-          0
-          'Delta'
         )
       end
     end
@@ -69,7 +93,7 @@ object Form1: TForm1
       Caption = 'Console'
       ClientHeight = 432
       ClientWidth = 632
-      object Edit1: TEdit
+      object ConsoleEdit: TEdit
         Left = 0
         Height = 23
         Top = 409
@@ -82,10 +106,11 @@ object Form1: TForm1
         Font.Name = 'Segoe UI'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
+        OnKeyUp = ConsoleEditKeyUp
         ParentFont = False
         TabOrder = 0
       end
-      object Memo1: TMemo
+      object Console: TMemo
         Left = 0
         Height = 409
         Top = 0
@@ -109,5 +134,11 @@ object Form1: TForm1
     object MenuItem1: TMenuItem
       Caption = 'File'
     end
+  end
+  object TimerLatido: TTimer
+    Interval = 200
+    OnTimer = TimerLatidoTimer
+    Left = 505
+    Top = 409
   end
 end

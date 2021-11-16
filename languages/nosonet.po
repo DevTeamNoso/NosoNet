@@ -5,12 +5,60 @@ msgstr "Content-Type: text/plain; charset=UTF-8"
 msgid "Starting"
 msgstr ""
 
+#: nosonet_language.restring2
+msgid "NosoNet version "
+msgstr ""
+
+#: nosonet_language.restring3
+msgid "Command not valid (%s)"
+msgstr ""
+
 #: tform1.caption
 msgid "NosoNet"
 msgstr ""
 
 #: tform1.menuitem1.caption
 msgid "File"
+msgstr ""
+
+#: tform1.stringgrid1.columns[0].title.caption
+msgctxt "tform1.stringgrid1.columns[0].title.caption"
+msgid "Host"
+msgstr ""
+
+#: tform1.stringgrid1.columns[1].title.caption
+msgctxt "tform1.stringgrid1.columns[1].title.caption"
+msgid "Port"
+msgstr ""
+
+#: tform1.stringgrid1.columns[2].title.caption
+msgctxt "tform1.stringgrid1.columns[2].title.caption"
+msgid "Peers"
+msgstr ""
+
+#: tform1.stringgrid1.columns[3].title.caption
+msgctxt "tform1.stringgrid1.columns[3].title.caption"
+msgid "Block"
+msgstr ""
+
+#: tform1.stringgrid1.columns[4].title.caption
+msgctxt "tform1.stringgrid1.columns[4].title.caption"
+msgid "LBhash"
+msgstr ""
+
+#: tform1.stringgrid1.columns[5].title.caption
+msgctxt "tform1.stringgrid1.columns[5].title.caption"
+msgid "Pending"
+msgstr ""
+
+#: tform1.stringgrid1.columns[6].title.caption
+msgctxt "tform1.stringgrid1.columns[6].title.caption"
+msgid "Branch"
+msgstr ""
+
+#: tform1.stringgrid1.columns[7].title.caption
+msgctxt "tform1.stringgrid1.columns[7].title.caption"
+msgid "Delta"
 msgstr ""
 
 #: tform1.tabsheet1.caption

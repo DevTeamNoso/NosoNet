@@ -9,6 +9,8 @@ uses
 
 resourcestring
   Restring1 = 'Starting';
+  Restring2 = 'NosoNet version ';
+  Restring3 = 'Command not valid (%s)';
 
 implementation
 
