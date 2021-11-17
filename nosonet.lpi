@@ -14,6 +14,11 @@
         <DpiAware Value="True"/>
       </XPManifest>
       <Icon Value="0"/>
+      <Resources Count="3">
+        <Resource_0 FileName="languages\nosonet.es.po" Type="RCDATA" ResourceName="NOSONET.ES"/>
+        <Resource_1 FileName="languages\nosonet.po" Type="RCDATA" ResourceName="NOSONET"/>
+        <Resource_2 FileName="languages\nosonet.pt.po" Type="RCDATA" ResourceName="NOSONET.PT"/>
+      </Resources>
     </General>
     <i18n>
       <EnableI18N Value="True"/>
@@ -107,7 +112,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="nosonet.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -129,6 +134,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="NosoNet_Functions"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="nosonet_file.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="NosoNet_file"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

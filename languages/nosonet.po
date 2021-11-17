@@ -13,6 +13,14 @@ msgstr ""
 msgid "Command not valid (%s)"
 msgstr ""
 
+#: nosonet_language.restring4
+msgid "Language not valid: %s"
+msgstr ""
+
+#: nosonet_language.restring5
+msgid "New language : %s"
+msgstr ""
+
 #: tform1.caption
 msgid "NosoNet"
 msgstr ""

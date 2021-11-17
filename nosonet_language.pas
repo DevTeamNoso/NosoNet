@@ -11,6 +11,12 @@ resourcestring
   Restring1 = 'Starting';
   Restring2 = 'NosoNet version %s';
   Restring3 = 'Command not valid (%s)';
+  Restring4 = 'Language not valid: %s';
+  Restring5 = 'New language : %s';
+
+CONST
+  LangES = 'ESPAÑOL';
+  LangPT = 'Portuguese';
 
 implementation
 

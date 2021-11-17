@@ -43,6 +43,7 @@ function StartApp():boolean;
 function CloseApp():Boolean;
 function Latido(): Boolean;
 Procedure processLine(linetext:string);
+Procedure ChangeLang(linetext:string);
 
 CONST
   DefaultNodes : String = 'DefNodes '+
@@ -133,9 +134,27 @@ var
   command : string = '';
 Begin
 command := Parameter(LineText,0);
+G_consolelines.Add(format('> %S',[linetext]));
 if uppercase(command) = 'EXIT' then closeapp
 else if uppercase(command) = 'VER' then G_consolelines.Add(Format(Restring2,[AppVersion]))
+else if uppercase(command) = 'LANG' then ChangeLang(linetext)
 else G_consolelines.Add(Format(Restring3,[command]));
+End;
+
+/////////////////////// PARSING CONSOLE /////////////////////////////////
+
+Procedure ChangeLang(linetext:string);
+var
+  language : string = '';
+Begin
+language := LowerCase(Parameter(linetext,1));
+if not fileexists('languages'+DirectorySeparator+'nosonet.'+language+'.po') then G_consolelines.Add(Format(Restring4,[language]))
+else
+  begin
+  SetDefaultLang(language);
+  G_consolelines.Add(Format(Restring5,[language]))
+  end;
+
 End;
 
 /////////////////////// CLOSE APP RELATIVES /////////////////////////////////

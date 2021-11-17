@@ -24,6 +24,14 @@ msgstr "NosoNet versão %s"
 msgid "Command not valid (%s)"
 msgstr "Comando inválido (%s)"
 
+#: nosonet_language.restring4
+msgid "Language not valid: %s"
+msgstr ""
+
+#: nosonet_language.restring5
+msgid "New language : %s"
+msgstr ""
+
 #: tform1.caption
 msgid "NosoNet"
 msgstr "NosoNet"
@@ -79,3 +87,4 @@ msgstr "Consola"
 #: tform1.tabsheet2.caption
 msgid "Nodes"
 msgstr "Nós"
+
