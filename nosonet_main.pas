@@ -145,7 +145,6 @@ Begin
 Result := true;
 
 form1.Close;
-
 End;
 
 // Adjust the size of the Sgrid for nodes
