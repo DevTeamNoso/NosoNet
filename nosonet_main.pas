@@ -61,7 +61,8 @@ var
   NodeList : Array of NodeData; // Stores the info of the mainnet nodes
   G_ConsoleLines : TStringList;   // Text to be show on console
   G_ProcessLines : TStringList;  // ]Lines to be preocessed ordered
-  G_LastConsoleCommand: String;
+  G_LastConsoleCommand: String = '';
+  G_FirstRun : Boolean = True;
 
 implementation
 
@@ -71,11 +72,15 @@ implementation
 
 procedure TForm1.FormActivate(Sender: TObject);
 begin
-Form1.OnActivate:= nil;
-TimerLatido.Enabled:=false;
-// Code to be run at launch
-Console.Lines.Add(Restring1);
-if not StartApp then CloseApp;
+//Form1.OnActivate:= nil;
+if G_FirstRun then
+   begin
+   G_FirstRun := false;
+   //TimerLatido.Enabled:=false;
+   // Code to be run at launch
+   Console.Lines.Add(Restring1);
+   if not StartApp then CloseApp;
+   end;
 end;
 
 
@@ -150,10 +155,10 @@ Begin
 language := LowerCase(Parameter(linetext,1));
 if not fileexists('languages'+DirectorySeparator+'nosonet.'+language+'.po') then G_consolelines.Add(Format(Restring4,[language]))
 else
-  begin
-  SetDefaultLang(language);
-  G_consolelines.Add(Format(Restring5,[language]))
-  end;
+   begin
+   SetDefaultLang(language);
+   G_consolelines.Add(Format(Restring5,[language]))
+   end;
 
 End;
 
@@ -162,7 +167,8 @@ End;
 function CloseApp():Boolean;
 Begin
 Result := true;
-
+G_Consolelines.Free;
+G_ProcessLines.Free;
 form1.Close;
 End;
 
