@@ -1,71 +1,81 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: NosoNet\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gustavo Carreno <guscarreno@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt\n"
+"X-Generator: Poedit 3.0\n"
 
 #: nosonet_language.restring1
 msgid "Starting"
-msgstr ""
+msgstr "Inicializando"
 
 #: nosonet_language.restring2
 msgid "NosoNet version %s"
-msgstr ""
+msgstr "NosoNet versão %s"
 
 #: nosonet_language.restring3
 msgid "Command not valid (%s)"
-msgstr ""
+msgstr "Comando inválido (%s)"
 
 #: tform1.caption
 msgid "NosoNet"
-msgstr ""
+msgstr "NosoNet"
 
 #: tform1.menuitem1.caption
 msgid "File"
-msgstr ""
+msgstr "Ficheiro"
 
 #: tform1.stringgrid1.columns[0].title.caption
 msgctxt "tform1.stringgrid1.columns[0].title.caption"
 msgid "Host"
-msgstr ""
+msgstr "Servidor"
 
 #: tform1.stringgrid1.columns[1].title.caption
 msgctxt "tform1.stringgrid1.columns[1].title.caption"
 msgid "Port"
-msgstr ""
+msgstr "Porto"
 
 #: tform1.stringgrid1.columns[2].title.caption
 msgctxt "tform1.stringgrid1.columns[2].title.caption"
 msgid "Peers"
-msgstr ""
+msgstr "Pares"
 
 #: tform1.stringgrid1.columns[3].title.caption
 msgctxt "tform1.stringgrid1.columns[3].title.caption"
 msgid "Block"
-msgstr ""
+msgstr "Bloco"
 
 #: tform1.stringgrid1.columns[4].title.caption
 msgctxt "tform1.stringgrid1.columns[4].title.caption"
 msgid "LBhash"
-msgstr ""
+msgstr "LBHash"
 
 #: tform1.stringgrid1.columns[5].title.caption
 msgctxt "tform1.stringgrid1.columns[5].title.caption"
 msgid "Pending"
-msgstr ""
+msgstr "Pendentes"
 
 #: tform1.stringgrid1.columns[6].title.caption
 msgctxt "tform1.stringgrid1.columns[6].title.caption"
 msgid "Branch"
-msgstr ""
+msgstr "Ramo"
 
 #: tform1.stringgrid1.columns[7].title.caption
 msgctxt "tform1.stringgrid1.columns[7].title.caption"
 msgid "Delta"
-msgstr ""
+msgstr "Delta"
 
 #: tform1.tabsheet1.caption
 msgid "Console"
-msgstr ""
+msgstr "Consola"
 
 #: tform1.tabsheet2.caption
 msgid "Nodes"
-msgstr ""
-
+msgstr "Nós"
