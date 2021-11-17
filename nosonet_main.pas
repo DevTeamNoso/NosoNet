@@ -30,6 +30,7 @@ type
     TimerLatido: TTimer;
     procedure ConsoleEditKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure StringGrid1Resize(Sender: TObject);
     procedure TimerLatidoTimer(Sender: TObject);
 
@@ -82,7 +83,6 @@ if G_FirstRun then
    if not StartApp then CloseApp;
    end;
 end;
-
 
 /////////////////////// START APP RELATIVES /////////////////////////////////
 
@@ -140,7 +140,7 @@ var
 Begin
 command := Parameter(LineText,0);
 G_consolelines.Add(format('> %S',[linetext]));
-if uppercase(command) = 'EXIT' then closeapp
+if uppercase(command) = 'EXIT' then Form1.Close
 else if uppercase(command) = 'VER' then G_consolelines.Add(Format(Restring2,[AppVersion]))
 else if uppercase(command) = 'LANG' then ChangeLang(linetext)
 else G_consolelines.Add(Format(Restring3,[command]));
@@ -157,6 +157,7 @@ if not fileexists('languages'+DirectorySeparator+'nosonet.'+language+'.po') then
 else
    begin
    SetDefaultLang(language);
+   form1.StringGrid1.Invalidate;
    G_consolelines.Add(Format(Restring5,[language]))
    end;
 
@@ -169,8 +170,14 @@ Begin
 Result := true;
 G_Consolelines.Free;
 G_ProcessLines.Free;
-form1.Close;
+//form1.Close;
 End;
+
+procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+CloseApp;
+CloseAction:= caFree;
+end;
 
 // Adjust the size of the Sgrid for nodes
 procedure TForm1.StringGrid1Resize(Sender: TObject);
