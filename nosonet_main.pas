@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, DefaultTranslator,
   ComCtrls, StdCtrls, Menus, Grids, LCLTranslator, ExtCtrls, NosoNet_Language,
-  NosoNet_Functions, LCLType  ;
+  NosoNet_Functions, LCLType, nosonet_file ;
 
 type
 
@@ -59,11 +59,16 @@ CONST
 var
   Form1: TForm1;
 
-  NodeList : Array of NodeData; // Stores the info of the mainnet nodes
-  G_ConsoleLines : TStringList;   // Text to be show on console
-  G_ProcessLines : TStringList;  // ]Lines to be preocessed ordered
-  G_LastConsoleCommand: String = '';
+  // User options
+  FileOptions : TextFile;
+  OPT_Lang : string = 'en';
+
+  NodeList : Array of NodeData;      // Stores the info of the mainnet nodes
+  G_ConsoleLines : TStringList;      // Text to be show on console
+  G_ProcessLines : TStringList;      // Lines to be preocessed ordered
+  G_LastConsoleCommand: String = ''; //
   G_FirstRun : Boolean = True;
+  G_LangsList : String = '';
 
 implementation
 
@@ -91,6 +96,7 @@ Begin
 Result := false;
 G_ConsoleLines := TStringlist.Create;
 G_ProcessLines := TStringlist.Create;
+InitLangs;
 LoadDefNodes;
 
 Result := true;
@@ -153,14 +159,21 @@ var
   language : string = '';
 Begin
 language := LowerCase(Parameter(linetext,1));
-if not fileexists('languages'+DirectorySeparator+'nosonet.'+language+'.po') then G_consolelines.Add(Format(Restring4,[language]))
+if language = '' then
+   begin
+   G_ConsoleLines.Add(format(Restring8,[G_LangsList]));
+   end
 else
    begin
-   SetDefaultLang(language);
-   form1.StringGrid1.Invalidate;
-   G_consolelines.Add(Format(Restring5,[language]))
+   if not fileexists('languages'+DirectorySeparator+'nosonet.'+language+'.po') then G_consolelines.Add(Format(Restring4,[language]))
+   else
+      begin
+      SetDefaultLang(language);
+      G_consolelines.Add(Format(Restring5,[LangCodeToName(Language)]));
+      OPT_Lang := language;
+      SaveOptions(true);
+      end;
    end;
-
 End;
 
 /////////////////////// CLOSE APP RELATIVES /////////////////////////////////

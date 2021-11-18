@@ -31,6 +31,18 @@ msgstr ""
 msgid "New language : %s"
 msgstr ""
 
+#: nosonet_language.restring6
+msgid "Options saved"
+msgstr ""
+
+#: nosonet_language.restring7
+msgid "Options file created"
+msgstr ""
+
+#: nosonet_language.restring8
+msgid "Languages available: %s"
+msgstr ""
+
 #: tform1.caption
 msgid "NosoNet"
 msgstr ""
@@ -86,3 +98,4 @@ msgstr ""
 #: tform1.tabsheet2.caption
 msgid "Nodes"
 msgstr ""
+

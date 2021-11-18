@@ -13,7 +13,8 @@ uses
 {$R *.res}
 
 begin
-  SetDefaultLang('en');
+  CheckOptions;
+  SetDefaultLang(OPT_Lang);
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
